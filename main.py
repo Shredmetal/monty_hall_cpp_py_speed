@@ -5,7 +5,7 @@ import os
 
 # Global variable, just change this number to change the number of trials to run.
 
-NUM_TRIALS = 100000
+NUM_TRIALS = 1000000
 
 # Define a function to get open a door (get rid of the door)
 
@@ -20,7 +20,6 @@ def goat_door(choice):
 # Initialise lists to store the number of times player gets a car out of 100 runs.
 
 no_change_result_list = []
-
 change_result_list = []
 
 # Main program loop
@@ -96,6 +95,6 @@ with open("results/results.txt", mode="w") as data_file:
 
 # Plot the results into a single chart and save the figures
 
-plt.hist(no_change_df, rwidth=0.7, density=True, bins=[n for n in range(100)])
-plt.hist(change_df, rwidth=0.7, density=True, bins=[n for n in range(100)])
+plt.hist(no_change_df, rwidth=0.7, density=True, bins=[n for n in range(101)])
+plt.hist(change_df, rwidth=0.7, density=True, bins=[n for n in range(101)])
 plt.savefig("results/distributions.png")
