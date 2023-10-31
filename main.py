@@ -5,7 +5,7 @@ import os
 
 # Global variable, just change this number to change the number of trials to run.
 
-NUM_TRIALS = 1000000
+NUM_TRIALS = 100000
 
 # Define a function to get open a door (get rid of the door)
 
@@ -95,6 +95,10 @@ with open("results/results.txt", mode="w") as data_file:
 
 # Plot the results into a single chart and save the figures
 
-plt.hist(no_change_df, rwidth=0.7, density=True, bins=[n for n in range(101)])
-plt.hist(change_df, rwidth=0.7, density=True, bins=[n for n in range(101)])
+plt.hist(no_change_df, rwidth=0.7, density=True, bins=[n for n in range(101)], label="No change in choice")
+plt.hist(change_df, rwidth=0.7, density=True, bins=[n for n in range(101)], label="Change in choice")
+plt.legend()
+plt.title("Probability of obtaining a car in the Monty Hall scenario")
+plt.xlabel("Number of times car was obtained in 100 trials")
+plt.ylabel("Probability of obtaining the car")
 plt.savefig("results/distributions.png")
