@@ -2,18 +2,21 @@ import random
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
+import time
+
+start = time.time()
 
 # Global variable, just change this number to change the number of trials to run.
 
-NUM_TRIALS = 100000
+NUM_TRIALS = 1000000
 
 # Define a function to get open a door (get rid of the door)
 
 
 def goat_door(choice):
-    if player_choice == "car" or player_choice == "goat2":
+    if choice == "car" or choice == "goat2":
         return "goat1"
-    elif player_choice == "goat1":
+    elif choice == "goat1":
         return "goat2"
 
 
@@ -70,6 +73,19 @@ for x in range(NUM_TRIALS):
 
     no_change_result_list.append(no_change_counter)
     change_result_list.append(change_counter)
+
+# End timer
+
+no_change_avg = sum(no_change_result_list) / len(no_change_result_list)
+change_avg = sum(change_result_list) / len(change_result_list)
+
+end = time.time()
+duration = end - start
+print(f"Execution time: {duration} seconds.")
+print(f"The average number of cars obtained in 100 runs of the Monty Hall game if the player does not change choice, "
+      f"trialled {NUM_TRIALS} times is: {no_change_avg}")
+print(f"The average number of cars obtained in 100 runs of the Monty Hall game if the player changes choice, "
+      f"trialled {NUM_TRIALS} times is: {change_avg}")
 
 # Stick the results into a dataframe
 
