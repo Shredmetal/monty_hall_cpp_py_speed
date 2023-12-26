@@ -13,3 +13,9 @@ C++:
 1. Execution time: 116.569 seconds.
 2. The average number of cars obtained in 100 runs of the Monty Hall game if the player does not change choice, trialled 1000000 times is: 33.3296
 3. The average number of cars obtained in 100 runs of the Monty Hall game if the player changes choice, trialled 1000000 times is: 66.6669
+
+That is to say, the C++ program finished executing the task of getting the averages in 59.83% of the time it took the Python program to do so.
+
+## Conclusion
+
+Conventional wisdom is right, Python is kind of slow, assuming you're not actually using a Python library that uses C under the bonnet.
