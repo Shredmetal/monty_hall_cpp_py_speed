@@ -5,7 +5,7 @@ Due to the purpose of the project, unnecessary lines of code have been implement
 ## Results
 
 Python 3.11:
-1. Execution time: 194.83554887771606 seconds.
+1. Execution time: 194.836 seconds.
 2. The average number of cars obtained in 100 runs of the Monty Hall game if the player does not change choice, trialled 1000000 times is: 33.326323
 3. The average number of cars obtained in 100 runs of the Monty Hall game if the player changes choice, trialled 1000000 times is: 66.677963
 
