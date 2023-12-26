@@ -17,10 +17,13 @@ std::string door_remove(std::string choice) {
 
 
 int main() {
+
     // start timer
+
     auto start = std::chrono::high_resolution_clock::now();
  
     // number of trials to run 
+
     const int num_trials {1000000};
 
     // initialise vectors to store trial results
@@ -88,6 +91,8 @@ int main() {
         change_result_vec.push_back(change_counter);
     }
 
+    // initialise doubles to hold averages
+
     double change_avg {0};
     double no_change_avg {0};
 
@@ -106,11 +111,16 @@ int main() {
     std::cout << "The average number of cars obtained in 100 runs of the Monty Hall game if the player changes choice, trialled " << num_trials << " times is: " << change_avg << std::endl;
 
     // end timer
+
     auto end = std::chrono::high_resolution_clock::now();
 
     // calculate duration
+
     std::chrono::duration<double> duration = end - start;
     std::cout << "Execution time: " << duration.count() << " seconds. " << std::endl;
+
+    // Note that the python version goes on to visualise the results. This is not being done on the C++ version because it will just use a Python wrapper.
+    // I am unaware of the existence of a C++ data visualisation library that is as good as matplotlib, and doesn't actually just use Python.
 
     return 0;
 }
